@@ -1,0 +1,570 @@
+{
+	"info": {
+		"_postman_id": "26ee526e-6118-41c0-9c0a-bf1d37fc05af",
+		"name": "Twitter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2732008"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTUzNDMsImV4cCI6MTcwMTcwNjE0MywiZW1haWwiOiJ0ZXN0MkBtYWlsLmNvbSJ9.KNiFC3C0MVal1Cker5tzXyrfSRTG0wGnAf3IZIErBP8SVdNbz6NaySZikJY_2pRd",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\" : \"tfdgdfgdfgfdgdfg$#%#^%$^%$#@$%^&=-\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{twitter}}/api/posts",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTc0NjksImV4cCI6MTcwMTcwODI2OSwiZW1haWwiOiJ0ZXN0MTAwQG1haWwuY29tIn0.SuRIAZmgH00YCjrZZYwlKS5Pvvmp4j_OV2r-UXyQi-Qaj1dqs9S7kKA2y9y_QQKT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\" : \"my first super post))))\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{twitter}}/api/posts",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTkwNDcsImV4cCI6MTcwMTcwOTg0NywiZW1haWwiOiJ0ZXN0MTAwQG1haWwuY29tIn0.CBkcsrV_5b6Wb3YdTsiyZbqHTSKhPddPmEKoKKVbFUOhNXPgEES4hI18U4bE7ssm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postId\" : \"656dc42fbf52f10f31285252\",\r\n    \"postId2\" : \"656cb6018c4f8f27049dbad9\",\r\n    \"content\" : \"my secind comment for super COMMENTt))))\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{twitter}}/api/posts/comment",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Comment Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2MjMzODQsImV4cCI6MTcwMTYzNDE4NCwiZW1haWwiOiJ0ZXN0MkBtYWlsLmNvbSJ9.RRtFM98jpryWP9wljtEhVCsyGq5v1T0gKWoejL9fxUfYqXmGM6WEZs6u0a9Da3V-",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postId\" : \"656cb1c306ef245e9d312444\",\r\n    \"postId2\" : \"656cb6018c4f8f27049dbad9\",\r\n    \"content\" : \"my secind comment for super COMMENTt))))\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{twitter}}/api/posts/comment",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTkwNDcsImV4cCI6MTcwMTcwOTg0NywiZW1haWwiOiJ0ZXN0MTAwQG1haWwuY29tIn0.CBkcsrV_5b6Wb3YdTsiyZbqHTSKhPddPmEKoKKVbFUOhNXPgEES4hI18U4bE7ssm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{twitter}}/api/posts/656de225d8ef30011feadf3a",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"656de225d8ef30011feadf3a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2ODQ3NjYsImV4cCI6MTcwMTY5NTU2NiwiZW1haWwiOiJ0ZXN0MkBtYWlsLmNvbSJ9.YqqwHdOOWKCYF57FE_8HOhvgerZphaHnsv0oTQFUTUsOgBDGo1UlW9j5AYH0pa3X",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{twitter}}/api/posts/656c96c37913a81aea2a5fd2",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"656c96c37913a81aea2a5fd2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTQ5OTcsImV4cCI6MTcwMTcwNTc5NywiZW1haWwiOiJ0ZXN0MkBtYWlsLmNvbSJ9.LR4wfiWox7nzeX0bFMTV3LsXKUWfxXi8A4GZ4S2xYY_EbNtNTdOFij5FqZNhm3KK",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{twitter}}/api/likes/656c9d969f4e630b64e7f89a/like",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"likes",
+								"656c9d969f4e630b64e7f89a",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTEyMDAsImV4cCI6MTcwMTcwMjAwMCwiZW1haWwiOiJ0ZXN0M0BtYWlsLmNvbSJ9.YDkqBjwQf7sMYcdmJbgugkCcYsV8BiecLpovCzuMRKb9XBBWFe4VF6UYQafWCFu8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{twitter}}/api/posts/656dbcdebf52f10f3128524c/comments",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"656dbcdebf52f10f3128524c",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTkwNDcsImV4cCI6MTcwMTcwOTg0NywiZW1haWwiOiJ0ZXN0MTAwQG1haWwuY29tIn0.CBkcsrV_5b6Wb3YdTsiyZbqHTSKhPddPmEKoKKVbFUOhNXPgEES4hI18U4bE7ssm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{twitter}}/api/posts/656dddf62a52f36cd10296af",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"656dddf62a52f36cd10296af"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"test101@mail.com\",\r\n    \"fullName\" : \"TEST101\",\r\n    \"password\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{twitter}}/auth/signup",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"test100@mail.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{twitter}}/auth/signin",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTczOTcsImV4cCI6MTcwMTcwODE5NywiZW1haWwiOiJ0ZXN0MTAxQG1haWwuY29tIn0.23mLXcVv_f0ynr9lLlKPtC-fCyNeQ8zIj2QZaVaRAo6_F0hUTqk0zs9Oy-iLVUhh",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{twitter}}/api/users/656c82439dc250764681764a/subscribe",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"656c82439dc250764681764a",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTU0NzIsImV4cCI6MTcwMTcwNjI3MiwiZW1haWwiOiJ0ZXN0MkBtYWlsLmNvbSJ9.WjJ3G15cGs1HJRLgokniogWY6iiT0UDlHEaz-c3DcgajJrqAeDR7rAfT1dAUWidU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{twitter}}/api/users/656a0b1cced10123637b33e0/subscribe",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"656a0b1cced10123637b33e0",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get feed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTc0NjksImV4cCI6MTcwMTcwODI2OSwiZW1haWwiOiJ0ZXN0MTAwQG1haWwuY29tIn0.SuRIAZmgH00YCjrZZYwlKS5Pvvmp4j_OV2r-UXyQi-Qaj1dqs9S7kKA2y9y_QQKT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{twitter}}/api/posts/feed",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"feed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get feed Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTcyMzYsImV4cCI6MTcwMTcwODAzNiwiZW1haWwiOiJ0ZXN0MTAwQG1haWwuY29tIn0.buJ3VLxzRxQCUINAja1h7qHZLGAJL_Fcl8zz1hX_i9mho4Zk_iOFaaB-SYuceu9o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{twitter}}/api/posts/feed/656dbbe8f335a14640588fac",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"feed",
+								"656dbbe8f335a14640588fac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTUyMDIsImV4cCI6MTcwMTcwNjAwMiwiZW1haWwiOiJ0ZXN0M0BtYWlsLmNvbSJ9.AtgULc4X1Vk_LL-VWU80j_378MzsL9N2M07Red7cXAlZBcRWBmq7Ootfy1sgwrtx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{twitter}}/api/users",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MDE2OTY3NzIsImV4cCI6MTcwMTcwNzU3MiwiZW1haWwiOiJ0ZXN0MkBtYWlsLmNvbSJ9.VCLiKnRLw5I_QtRyaTDzfK6-SOUU1WmIqs2I9pYdIFXSsnDQ60YvHZy_2zmLtrON",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{twitter}}/api/users",
+							"host": [
+								"{{twitter}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "twitter",
+			"value": "localhost:8099"
+		}
+	]
+}
