@@ -1,7 +1,6 @@
 package com.example.demo.configuration
 
 import jakarta.servlet.http.HttpServletRequest
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Profile
@@ -15,7 +14,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.CorsConfigurationSource
 
-import java.security.Key
+import static org.springframework.security.config.Customizer.withDefaults
 
 @Configuration
 @Profile("!test")
@@ -25,20 +24,22 @@ class SecurityConfiguration {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) {
 
-        httpSecurity.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and()
-            .authorizeHttpRequests(customizer -> customizer.requestMatchers("/api/**")
-                    .authenticated()
-                    .anyRequest().permitAll()
-            ).addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
-            .csrf().disable()
-            .cors().configurationSource(corsConfigurationSource())
-                .and().httpBasic().and().formLogin()
+        httpSecurity
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(customizer -> customizer.requestMatchers("/api/**")
+                        .authenticated()
+                        .anyRequest().permitAll()
+                )
+                .addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
+                .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                .httpBasic(withDefaults())
+                .formLogin(withDefaults())
 
         return httpSecurity.build()
     }
 
-    private CorsConfigurationSource corsConfigurationSource() {
+    static CorsConfigurationSource corsConfigurationSource() {
         return new CorsConfigurationSource() {
             @Override
             CorsConfiguration getCorsConfiguration(HttpServletRequest request) {

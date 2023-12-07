@@ -16,8 +16,8 @@ class JwtProvider {
     String generateToken(Authentication authentication) {
 
         Jwts.builder()
-        .setIssuedAt(new Date())
-        .setExpiration(new Date(new Date().getTime() + 10_800_000))
+        .issuedAt(new Date())
+        .expiration(new Date(new Date().getTime() + 10_800_000))
         .claim("email", authentication.getName())
         .signWith(key)
         .compact()
@@ -25,7 +25,7 @@ class JwtProvider {
 
     String getEmailFromToken(String jwt) {
         jwt = jwt.substring("Bearer".length() + 1)
-        Claims claims = Jwts.parser().setSigningKey(key).build().parseClaimsJws(jwt).getBody()
+        Claims claims = Jwts.parser().verifyWith(key).build().parseSignedClaims(jwt).getPayload()
 
         String.valueOf(claims.get("email"))
     }
