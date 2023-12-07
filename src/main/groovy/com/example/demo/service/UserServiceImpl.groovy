@@ -1,6 +1,7 @@
 package com.example.demo.service
 
 import com.example.demo.configuration.JwtProvider
+import com.example.demo.entity.Post
 import com.example.demo.entity.User
 import com.example.demo.exception.UserException
 
@@ -10,6 +11,9 @@ import com.example.demo.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
+
+import java.util.stream.Collectors
+import java.util.stream.Stream
 
 @Service
 class UserServiceImpl implements UserService {
@@ -92,8 +96,12 @@ class UserServiceImpl implements UserService {
     void deleteUser(User user) {
         likeRepository.deleteAllByUser(user)
         var posts = postRepository.findAllByUser(user)
-        likeRepository.deleteAllByPostIn(posts)
-        postRepository.deleteAll(posts)
+        List<Post> postsToDelete = posts.stream()
+            .flatMap(post -> Stream.concat(Stream.of(post), post.getComments().stream()))
+            .collect(Collectors.toList())
+
+        likeRepository.deleteAllByPostIn(postsToDelete)
+        postRepository.deleteAll(postsToDelete)
 
         userRepository.delete(user)
     }
